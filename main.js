@@ -16,9 +16,11 @@ fetch(userUrl)
   .then(response => response.json())
   .then(function (data) {
     console.log(data)
-    const headerEl = document.createElement('p')
-    headerEl.innerText = data.avatar_url
-    targetEl.appendChild(headerEl)
+    let userPicture = document.createElement('img')
+    userPicture.classList.add('userPicture')
+    userPicture.src = data.avatar_url
+    targetEl.appendChild(userPicture)
+    
   })
 
 fetch(userUrl)
